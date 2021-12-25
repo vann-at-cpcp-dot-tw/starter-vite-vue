@@ -1,0 +1,120 @@
+@import 'src/styles/variables'
+@import 'src/styles/libs'
+@import 'src/styles/utilities'
+
+*
+  box-sizing: border-box
+  outline: none
+  -webkit-overflow-scrolling: touch
+  word-break: break-word
+  word-wrap: break-word
+  &:focus
+      outline: none
+
+html,
+body
+  width: 100%
+  height: 100%
+  padding: 0px
+  margin: 0px
+  font-family: source-han-sans-traditional, '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Helvetica Neue', 'Microsoft JhengHei', '微軟正黑體', sans-serif
+  font-size: 16px
+  font-weight: 400
+  // Adobe source-han-sans-traditional Font Weight Setting
+  // ExtraLight 100
+  // Light 200
+  // Normal 300
+  // Regular 400
+  // Medium 500
+  // Bold 700
+  // Heavy 900
+
+#app
+  position: relative
+  width: 100%
+  height: 100%
+
+.sticky
+  position: relative
+  position: sticky
+
+a
+  color: inherit
+  cursor: pointer
+  text-decoration: none
+  &:hover
+    text-decoration: none
+  &:visited
+    text-decoration: none
+
+hr
+  padding: 0px
+  margin: 0px
+  border: none
+  border-top: solid 1px
+
+img
+  max-width: 100%
+  display: block
+
+.btn
+  cursor: pointer
+  transition: all .1s
+  &-bg-secondary
+    @extend .btn
+    @apply bg-secondary-500
+    &:hover
+      @apply bg-main-500 text-white
+  &-dark
+    @extend .btn
+    &:hover
+      filter: brightness(0.8)
+  &-light
+    @extend .btn
+    &:hover
+      filter: brightness(1.2)
+  &-scaleUp
+    @extend .btn
+    &:hover
+      transform: scale(1.1)
+  &-scaleDown
+    @extend .btn
+    &:hover
+      transform: scale(0.9)
+  &-up
+    @extend .btn
+    &:hover
+      transform: translateY(-10px)
+  &-down
+    @extend .btn
+    &:hover
+      transform: translateY(10px)
+  &-opacity
+    @extend .btn
+    &:hover
+      opacity: 0.8
+  &-inside-brightest
+    @extend .btn
+    &:hover
+      >*
+        filter: brightness(100)
+  &-inside-darkest
+    @extend .btn
+    &:hover
+      >*
+        filter: brightness(-100)
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="numbr"],
+input[type="search"]
+  display: block
+  border-radius: 0px
+  padding-left: 10px
+  width: 100%
+  height: 36px
+  &.size-2
+    height: 44px
+
+//custom

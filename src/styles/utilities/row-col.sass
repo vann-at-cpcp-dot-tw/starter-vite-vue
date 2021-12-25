@@ -1,0 +1,435 @@
+//container 設定
+.container
+  width: 100%
+  padding-right: 20px
+  padding-left: 20px
+  margin-right: auto
+  margin-left: auto
+@media (min-width: #{$bp-sm}px)
+  .container
+    max-width: 540px
+@media (min-width: #{$bp-md}px)
+  .container
+    max-width: 720px
+@media (min-width: #{$bp-lg}px)
+  .container
+    max-width: 960px
+@media (min-width: #{$bp-xl}px)
+  .container
+    max-width: 1140px
+
+.container-fluid
+  width: 100%
+  padding-right: 20px
+  padding-left: 20px
+  margin-right: auto
+  margin-left: auto
+
+
+//row & col 共通設定
+.row
+  display: flex
+  flex-wrap: wrap
+  margin-right: -10px
+  margin-left: -10px
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
+.col-auto, .sm\:col-1, .sm\:col-2, .sm\:col-3, .sm\:col-4, .sm\:col-5, .sm\:col-6, .sm\:col-7, .sm\:col-8, .sm\:col-9, .sm\:col-10, .sm\:col-11, .sm\:col-12, .sm\:col,
+.sm\:col-auto, .md\:col-1, .md\:col-2, .md\:col-3, .md\:col-4, .md\:col-5, .md\:col-6, .md\:col-7, .md\:col-8, .md\:col-9, .md\:col-10, .md\:col-11, .md\:col-12, .md\:col,
+.md\:col-auto, .lg\:col-1, .lg\:col-2, .lg\:col-3, .lg\:col-4, .lg\:col-5, .lg\:col-6, .lg\:col-7, .lg\:col-8, .lg\:col-9, .lg\:col-10, .lg\:col-11, .lg\:col-12, .lg\:col,
+.lg\:col-auto, .xl\:col-1, .xl\:col-2, .xl\:col-3, .xl\:col-4, .xl\:col-5, .xl\:col-6, .xl\:col-7, .xl\:col-8, .xl\:col-9, .xl\:col-10, .xl\:col-11, .xl\:col-12, .xl\:col,
+.xl\:col-auto
+  position: relative
+  width: 100%
+  min-height: 1px
+  padding-right: 10px
+  padding-left: 10px
+
+
+
+//col's width ＆ order 設定
+.col
+  flex-basis: 0
+  flex-grow: 1
+  max-width: 100%
+.col-auto
+  flex: 0 0 auto
+  width: auto
+  max-width: none
+.col-1
+  flex: 0 0 8.3333333333%
+  max-width: 8.3333333333%
+.col-2
+  flex: 0 0 16.6666666667%
+  max-width: 16.6666666667%
+.col-3
+  flex: 0 0 25%
+  max-width: 25%
+.col-4
+  flex: 0 0 33.3333333333%
+  max-width: 33.3333333333%
+.col-5
+  flex: 0 0 41.6666666667%
+  max-width: 41.6666666667%
+.col-6
+  flex: 0 0 50%
+  max-width: 50%
+.col-7
+  flex: 0 0 58.3333333333%
+  max-width: 58.3333333333%
+.col-8
+  flex: 0 0 66.6666666667%
+  max-width: 66.6666666667%
+.col-9
+  flex: 0 0 75%
+  max-width: 75%
+.col-10
+  flex: 0 0 83.3333333333%
+  max-width: 83.3333333333%
+.col-11
+  flex: 0 0 91.6666666667%
+  max-width: 91.6666666667%
+.col-12
+  flex: 0 0 100%
+  max-width: 100%
+
+@media (min-width: #{$bp-sm}px)
+  .sm\:col
+    flex-basis: 0
+    flex-grow: 1
+    max-width: 100%
+  .sm\:col-auto
+    flex: 0 0 auto
+    width: auto
+    max-width: none
+  .sm\:col-1
+    flex: 0 0 8.3333333333%
+    max-width: 8.3333333333%
+  .sm\:col-2
+    flex: 0 0 16.6666666667%
+    max-width: 16.6666666667%
+  .sm\:col-3
+    flex: 0 0 25%
+    max-width: 25%
+  .sm\:col-4
+    flex: 0 0 33.3333333333%
+    max-width: 33.3333333333%
+  .sm\:col-5
+    flex: 0 0 41.6666666667%
+    max-width: 41.6666666667%
+  .sm\:col-6
+    flex: 0 0 50%
+    max-width: 50%
+  .sm\:col-7
+    flex: 0 0 58.3333333333%
+    max-width: 58.3333333333%
+  .sm\:col-8
+    flex: 0 0 66.6666666667%
+    max-width: 66.6666666667%
+  .sm\:col-9
+    flex: 0 0 75%
+    max-width: 75%
+  .sm\:col-10
+    flex: 0 0 83.3333333333%
+    max-width: 83.3333333333%
+  .sm\:col-11
+    flex: 0 0 91.6666666667%
+    max-width: 91.6666666667%
+  .sm\:col-12
+    flex: 0 0 100%
+    max-width: 100%
+
+@media (min-width: #{$bp-md}px)
+  .md\:col
+    flex-basis: 0
+    flex-grow: 1
+    max-width: 100%
+  .md\:col-auto
+    flex: 0 0 auto
+    width: auto
+    max-width: none
+  .md\:col-1
+    flex: 0 0 8.3333333333%
+    max-width: 8.3333333333%
+  .md\:col-2
+    flex: 0 0 16.6666666667%
+    max-width: 16.6666666667%
+  .md\:col-3
+    flex: 0 0 25%
+    max-width: 25%
+  .md\:col-4
+    flex: 0 0 33.3333333333%
+    max-width: 33.3333333333%
+  .md\:col-5
+    flex: 0 0 41.6666666667%
+    max-width: 41.6666666667%
+  .md\:col-6
+    flex: 0 0 50%
+    max-width: 50%
+  .md\:col-7
+    flex: 0 0 58.3333333333%
+    max-width: 58.3333333333%
+  .md\:col-8
+    flex: 0 0 66.6666666667%
+    max-width: 66.6666666667%
+  .md\:col-9
+    flex: 0 0 75%
+    max-width: 75%
+  .md\:col-10
+    flex: 0 0 83.3333333333%
+    max-width: 83.3333333333%
+  .md\:col-11
+    flex: 0 0 91.6666666667%
+    max-width: 91.6666666667%
+  .md\:col-12
+    flex: 0 0 100%
+    max-width: 100%
+
+@media (min-width: #{$bp-lg}px)
+  .lg\:col
+    flex-basis: 0
+    flex-grow: 1
+    max-width: 100%
+  .lg\:col-auto
+    flex: 0 0 auto
+    width: auto
+    max-width: none
+  .lg\:col-1
+    flex: 0 0 8.3333333333%
+    max-width: 8.3333333333%
+  .lg\:col-2
+    flex: 0 0 16.6666666667%
+    max-width: 16.6666666667%
+  .lg\:col-3
+    flex: 0 0 25%
+    max-width: 25%
+  .lg\:col-4
+    flex: 0 0 33.3333333333%
+    max-width: 33.3333333333%
+  .lg\:col-5
+    flex: 0 0 41.6666666667%
+    max-width: 41.6666666667%
+  .lg\:col-6
+    flex: 0 0 50%
+    max-width: 50%
+  .lg\:col-7
+    flex: 0 0 58.3333333333%
+    max-width: 58.3333333333%
+  .lg\:col-8
+    flex: 0 0 66.6666666667%
+    max-width: 66.6666666667%
+  .lg\:col-9
+    flex: 0 0 75%
+    max-width: 75%
+  .lg\:col-10
+    flex: 0 0 83.3333333333%
+    max-width: 83.3333333333%
+  .lg\:col-11
+    flex: 0 0 91.6666666667%
+    max-width: 91.6666666667%
+  .lg\:col-12
+    flex: 0 0 100%
+    max-width: 100%
+
+@media (min-width: #{$bp-xl}px)
+  .xl\:col
+    flex-basis: 0
+    flex-grow: 1
+    max-width: 100%
+  .xl\:col-auto
+    flex: 0 0 auto
+    width: auto
+    max-width: none
+  .xl\:col-1
+    flex: 0 0 8.3333333333%
+    max-width: 8.3333333333%
+  .xl\:col-2
+    flex: 0 0 16.6666666667%
+    max-width: 16.6666666667%
+  .xl\:col-3
+    flex: 0 0 25%
+    max-width: 25%
+  .xl\:col-4
+    flex: 0 0 33.3333333333%
+    max-width: 33.3333333333%
+  .xl\:col-5
+    flex: 0 0 41.6666666667%
+    max-width: 41.6666666667%
+  .xl\:col-6
+    flex: 0 0 50%
+    max-width: 50%
+  .xl\:col-7
+    flex: 0 0 58.3333333333%
+    max-width: 58.3333333333%
+  .xl\:col-8
+    flex: 0 0 66.6666666667%
+    max-width: 66.6666666667%
+  .xl\:col-9
+    flex: 0 0 75%
+    max-width: 75%
+  .xl\:col-10
+    flex: 0 0 83.3333333333%
+    max-width: 83.3333333333%
+  .xl\:col-11
+    flex: 0 0 91.6666666667%
+    max-width: 91.6666666667%
+  .xl\:col-12
+    flex: 0 0 100%
+    max-width: 100%
+
+@media (min-width: #{$bp-xxl}px)
+  .xxl\:col
+    flex-basis: 0
+    flex-grow: 1
+    max-width: 100%
+  .xxl\:col-auto
+    flex: 0 0 auto
+    width: auto
+    max-width: none
+  .xxl\:col-1
+    flex: 0 0 8.3333333333%
+    max-width: 8.3333333333%
+  .xxl\:col-2
+    flex: 0 0 16.6666666667%
+    max-width: 16.6666666667%
+  .xxl\:col-3
+    flex: 0 0 25%
+    max-width: 25%
+  .xxl\:col-4
+    flex: 0 0 33.3333333333%
+    max-width: 33.3333333333%
+  .xxl\:col-5
+    flex: 0 0 41.6666666667%
+    max-width: 41.6666666667%
+  .xxl\:col-6
+    flex: 0 0 50%
+    max-width: 50%
+  .xxl\:col-7
+    flex: 0 0 58.3333333333%
+    max-width: 58.3333333333%
+  .xxl\:col-8
+    flex: 0 0 66.6666666667%
+    max-width: 66.6666666667%
+  .xxl\:col-9
+    flex: 0 0 75%
+    max-width: 75%
+  .xxl\:col-10
+    flex: 0 0 83.3333333333%
+    max-width: 83.3333333333%
+  .xxl\:col-11
+    flex: 0 0 91.6666666667%
+    max-width: 91.6666666667%
+  .xxl\:col-12
+    flex: 0 0 100%
+    max-width: 100%
+
+@media (min-width: #{$bp-xxxl}px)
+  .xxxl\:col-
+    flex-basis: 0
+    flex-grow: 1
+    max-width: 100%
+  .xxxl\:col-auto
+    flex: 0 0 auto
+    width: auto
+    max-width: none
+  .xxxl\:col-1
+    flex: 0 0 8.3333333333%
+    max-width: 8.3333333333%
+  .xxxl\:col-2
+    flex: 0 0 16.6666666667%
+    max-width: 16.6666666667%
+  .xxxl\:col-3
+    flex: 0 0 25%
+    max-width: 25%
+  .xxxl\:col-4
+    flex: 0 0 33.3333333333%
+    max-width: 33.3333333333%
+  .xxxl\:col-5
+    flex: 0 0 41.6666666667%
+    max-width: 41.6666666667%
+  .xxxl\:col-6
+    flex: 0 0 50%
+    max-width: 50%
+  .xxxl\:col-7
+    flex: 0 0 58.3333333333%
+    max-width: 58.3333333333%
+  .xxxl\:col-8
+    flex: 0 0 66.6666666667%
+    max-width: 66.6666666667%
+  .xxxl\:col-9
+    flex: 0 0 75%
+    max-width: 75%
+  .xxxl\:col-10
+    flex: 0 0 83.3333333333%
+    max-width: 83.3333333333%
+  .xxxl\:col-11
+    flex: 0 0 91.6666666667%
+    max-width: 91.6666666667%
+  .xxxl\:col-12
+    flex: 0 0 100%
+    max-width: 100%
+
+//gap 調整
+$remPerUnit: 0.25
+$gapList: (0, 1, 2, 4, 5, 8, 10)
+@each $gap in $gapList
+  .row-gap-#{$gap}
+    margin-right: - ($gap / 2 * $remPerUnit) + rem
+    margin-left: - ($gap / 2 * $remPerUnit) + rem
+    >.col-1, >.col-2, >.col-3, >.col-4, >.col-5, >.col-6, >.col-7, >.col-8, >.col-9, >.col-10, >.col-11, >.col-12, >.col, >.col-auto, >.sm\:col-1, >.sm\:col-2, >.sm\:col-3, >.sm\:col-4, >.sm\:col-5, >.sm\:col-6, >.sm\:col-7, >.sm\:col-8, >.sm\:col-9, >.sm\:col-10, >.sm\:col-11, >.sm\:col-12, >.sm\:col, >.sm\:col-auto, >.md\:col-1, >.md\:col-2, >.md\:col-3, >.md\:col-4, >.md\:col-5, >.md\:col-6, >.md\:col-7, >.md\:col-8, >.md\:col-9, >.md\:col-10, >.md\:col-11, >.md\:col-12, >.md\:col, >.md\:col-auto, >.lg\:col-1, >.lg\:col-2, >.lg\:col-3, >.lg\:col-4, >.lg\:col-5, >.lg\:col-6, >.lg\:col-7, >.lg\:col-8, >.lg\:col-9, >.lg\:col-10, >.lg\:col-11, >.lg\:col-12, >.lg\:col, >.lg\:col-auto, >.xl\:col-1, >.xl\:col-2, >.xl\:col-3, >.xl\:col-4, >.xl\:col-5, >.xl\:col-6, >.xl\:col-7, >.xl\:col-8, >.xl\:col-9, >.xl\:col-10, >.xl\:col-11, >.xl\:col-12, >.xl\:col, >.xl\:col-auto
+      padding-left: ($gap / 2 * $remPerUnit) + rem
+      padding-right: ($gap / 2 * $remPerUnit) + rem
+
+@media (min-width: #{$bp-sm}px) //sm
+  @each $gap in $gapList
+    .sm\:row-gap-#{$gap}
+      margin-right: - ($gap / 2 * $remPerUnit) + rem
+      margin-left: - ($gap / 2 * $remPerUnit) + rem
+      >.col-1, >.col-2, >.col-3, >.col-4, >.col-5, >.col-6, >.col-7, >.col-8, >.col-9, >.col-10, >.col-11, >.col-12, >.col, >.col-auto,
+      >.sm\:col-1, >.sm\:col-2, >.sm\:col-3, >.sm\:col-4, >.sm\:col-5, >.sm\:col-6, >.sm\:col-7, >.sm\:col-8, >.sm\:col-9, >.sm\:col-10, >.sm\:col-11, >.sm\:col-12, >.sm\:col, >.sm\:col-auto
+        padding-left: ($gap / 2 * $remPerUnit) + rem
+        padding-right: ($gap / 2 * $remPerUnit) + rem
+
+@media (min-width: #{$bp-md}px)
+  @each $gap in $gapList
+    .md\:row-gap-#{$gap}
+      margin-right: - ($gap / 2 * $remPerUnit) + rem
+      margin-left: - ($gap / 2 * $remPerUnit) + rem
+      >.col-1, >.col-2, >.col-3, >.col-4, >.col-5, >.col-6, >.col-7, >.col-8, >.col-9, >.col-10, >.col-11, >.col-12, >.col, >.col-auto >.md\:col-1, >.md\:col-2, >.md\:col-3, >.md\:col-4, >.md\:col-5, >.md\:col-6, >.md\:col-7, >.md\:col-8, >.md\:col-9, >.md\:col-10, >.md\:col-11, >.md\:col-12, >.md\:col, >.md\:col-auto
+        padding-left: ($gap / 2 * $remPerUnit) + rem
+        padding-right: ($gap / 2 * $remPerUnit) + rem
+
+@media (min-width: #{$bp-lg}px)
+  @each $gap in $gapList
+    .lg\:row-gap-#{$gap}
+      margin-right: - ($gap / 2 * $remPerUnit) + rem
+      margin-left: - ($gap / 2 * $remPerUnit) + rem
+      >.col-1, >.col-2, >.col-3, >.col-4, >.col-5, >.col-6, >.col-7, >.col-8, >.col-9, >.col-10, >.col-11, >.col-12, >.col, >.col-auto >.lg\:col-1, >.lg\:col-2, >.lg\:col-3, >.lg\:col-4, >.lg\:col-5, >.lg\:col-6, >.lg\:col-7, >.lg\:col-8, >.lg\:col-9, >.lg\:col-10, >.lg\:col-11, >.lg\:col-12, >.lg\:col, >.lg\:col-auto
+        padding-left: ($gap / 2 * $remPerUnit) + rem
+        padding-right: ($gap / 2 * $remPerUnit) + rem
+
+@media (min-width: #{$bp-xl}px)
+  @each $gap in $gapList
+    .xl\:row-gap-#{$gap}
+      margin-right: - ($gap / 2 * $remPerUnit) + rem
+      margin-left: - ($gap / 2 * $remPerUnit) + rem
+      >.col-1, >.col-2, >.col-3, >.col-4, >.col-5, >.col-6, >.col-7, >.col-8, >.col-9, >.col-10, >.col-11, >.col-12, >.col, >.col-auto >.xl\:col-1, >.xl\:col-2, >.xl\:col-3, >.xl\:col-4, >.xl\:col-5, >.xl\:col-6, >.xl\:col-7, >.xl\:col-8, >.xl\:col-9, >.xl\:col-10, >.xl\:col-11, >.xl\:col-12, >.xl\:col, >.xl\:col-auto
+        padding-left: ($gap / 2 * $remPerUnit) + rem
+        padding-right: ($gap / 2 * $remPerUnit) + rem
+
+@media (min-width: #{$bp-xxl}px)
+  @each $gap in $gapList
+    .xxl\:row-gap-#{$gap}
+      margin-right: - ($gap / 2 * $remPerUnit) + rem
+      margin-left: - ($gap / 2 * $remPerUnit) + rem
+      >.col-1, >.col-2, >.col-3, >.col-4, >.col-5, >.col-6, >.col-7, >.col-8, >.col-9, >.col-10, >.col-11, >.col-12, >.col, >.col-auto, >.xxl\:col-1, >.xxl\:col-2, >.xxl\:col-3, >.xxl\:col-4, >.xxl\:col-5, >.xxl\:col-6, >.xxl\:col-7, >.xxl\:col-8, >.xxl\:col-9, >.xxl\:col-10, >.xxl\:col-11, >.xxl\:col-12, >.xxl\:col, >.xxl\:col-auto
+        padding-left: ($gap / 2 * $remPerUnit) + rem
+        padding-right: ($gap / 2 * $remPerUnit) + rem
+
+@media (min-width: #{$bp-xxxl}px)
+  @each $gap in $gapList
+    .xxxl\:row-gap-#{$gap}
+      margin-right: - ($gap / 2 * $remPerUnit) + rem
+      margin-left: - ($gap / 2 * $remPerUnit) + rem
+      >.col-1, >.col-2, >.col-3, >.col-4, >.col-5, >.col-6, >.col-7, >.col-8, >.col-9, >.col-10, >.col-11, >.col-12, >.col, >.col-auto, >.xxxl\:col-1, >.xxxl\:col-2, >.xxxl\:col-3, >.xxxl\:col-4, >.xxxl\:col-5, >.xxxl\:col-6, >.xxxl\:col-7, >.xxxl\:col-8, >.xxxl\:col-9, >.xxxl\:col-10, >.xxxl\:col-11, >.xxxl\:col-12, >.xxxl\:col, >.xxxl\:col-auto
+        padding-left: ($gap / 2 * $remPerUnit) + rem
+        padding-right: ($gap / 2 * $remPerUnit) + rem
