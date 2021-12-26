@@ -17,5 +17,3 @@ createApp(App)
     }
 })
 .mount('#app')
-
-window.store = store
