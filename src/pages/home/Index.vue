@@ -8,9 +8,6 @@ import { isEmpty } from '@src/helpers'
 import components from '@src/components'
 const { Lightbox, LightboxClose, Icon, LayoutGeneral } = components
 
-
-
-
 export default defineComponent({
     props: {},
     setup(props, {emit}) {
