@@ -25,42 +25,62 @@
  */
 
 import path from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import legacy from '@vitejs/plugin-legacy'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    vue(),
-    vueJsx({
-      enableObjectSlots: true,
-        // options are passed on to @vue/babel-plugin-jsx
-    }),
-    // legacy({
-    //   targets: ['defaults', 'not IE 11']
+export default defineConfig(({mode}) => {
 
-    //   // 如果要支援 ie11
-    //   // targets: ['ie >= 11'],
-    //   // additionalLegacyPolyfills: ['regenerator-runtime/runtime']
-    // })
-  ],
-  build: {
-    emptyOutDir: true,
-    target: 'es2015',
-    rollupOptions: {
-      output: {
-        assetFileNames: "assets/[name]-[hash].[ext]",
-        chunkFileNames: "chunks/[name]-[hash].js",
-        entryFileNames: "entrances/[name]-[hash].js"
+  const ENV = loadEnv(mode, process.cwd(), '')
+
+  return {
+    define: {
+      // 字串要包 ""，參考：https://cn.vitejs.dev/config/#define
+      // VITE_APP_URL: `"${ENV.APP_URL}"`,
+    },
+    plugins: [
+      vue(),
+      vueJsx({
+        enableObjectSlots: true,
+          // options are passed on to @vue/babel-plugin-jsx
+      }),
+      // legacy({
+      //   targets: ['defaults', 'not IE 11']
+
+      //   // 如果要支援 ie11
+      //   // targets: ['ie >= 11'],
+      //   // additionalLegacyPolyfills: ['regenerator-runtime/runtime']
+      // })
+    ],
+    css: {
+        preprocessorOptions: {
+          sass: {
+            // additionalData: `$PUBLIC_URL: "${PUBLIC_URL}" \n`
+          }
+        },
+      //  requireModuleExtension: true
+    },
+    optimizeDeps: {
+        exclude: ['jquery']
+    },
+    build: {
+      emptyOutDir: true,
+      target: 'es2015',
+      rollupOptions: {
+        output: {
+          assetFileNames: "assets/[name]-[hash].[ext]",
+          chunkFileNames: "chunks/[name]-[hash].js",
+          entryFileNames: "entrances/[name]-[hash].js"
+        }
       }
-    }
-  },
-  resolve: {
-    alias: {
-        // vue: 'vue/dist/vue.esm-bundler.js',
-        '@src': path.resolve(__dirname, './src'),
+    },
+    resolve: {
+      alias: {
+          // vue: 'vue/dist/vue.esm-bundler.js',
+          '@src': path.resolve(__dirname, './src'),
+      }
     }
   }
 })
