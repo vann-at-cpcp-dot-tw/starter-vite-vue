@@ -5,8 +5,6 @@ import useResolveAssets from '@src/use/useResolveAssets'
 import { useStore } from 'vuex'
 import { router, useRoute } from '@src/routes'
 import { isEmpty } from '@src/helpers'
-import components from '@src/components'
-const { Lightbox, LightboxClose, Icon, LayoutGeneral } = components
 
 export default defineComponent({
     props: {},

@@ -1,29 +1,23 @@
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent } from "vue"
 
+// 以 file system 自動引入
 const componentModules = import.meta.glob('./**/*.vue')
 const components = {}
-const ignoreComponentNames = ['__sample'] //填入不需要的檔名, ex: ['Index', '__sample']
-const ignoreComponentPathes = ['./icons'] // 填入不需要的資料夾, ex: ['./icons']
+
 
 for (const path in componentModules) {
 
-  const name = path.split('/').pop().replace(/\.\w+$/, '')
+    // icons 是在 Icon.vue 裡面用 component:is 的方式引入，故跳過
+    if( path.includes('./__icons') ){
+        continue
+    }
 
-  if( ignoreComponentPathes.findIndex((ignorePath)=>path.includes(ignorePath)) > -1 ){
-    continue
-  }
+    let componentName = path.replaceAll('./', '').replaceAll('.vue', '').replaceAll('/', '')
 
-  if( ignoreComponentNames.includes(name) ){
-    continue
-  }
-
-  components[name] = defineAsyncComponent({
-      loader: componentModules[/* @vite-ignore */ `${path}`]
-  })
-
+    components[componentName] = defineAsyncComponent({
+        loader: componentModules[/* @vite-ignore */ `${path}`]
+    })
 }
 
-export default {
-  ...components,
-  Icon: defineAsyncComponent(()=> import('@src/components/icons/Index.vue'))
-}
+
+export default components

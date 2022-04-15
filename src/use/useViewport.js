@@ -1,8 +1,11 @@
-import { onMounted, reactive } from 'vue'
+import { onMounted, reactive, onBeforeUnmount } from 'vue'
+
 export default function(){
+
     const viewport = reactive({
         width: 0,
         height: 0,
+        resizeTimer: null
     })
 
     function updateViewportData(){
@@ -10,18 +13,23 @@ export default function(){
         viewport.height = window.innerHeight
     }
 
+    function resizeWatcher(){
+        clearTimeout(viewport.resizeTimer)
+        viewport.resizeTimer = setTimeout(function(){
+            updateViewportData()
+        }, 250)
+    }
+
     onMounted(()=>{
-
         updateViewportData()
-
-        let resizeTimer
-        $(window).on('resize', function(e){
-            clearTimeout(resizeTimer)
-            resizeTimer = setTimeout(function(){
-                updateViewportData()
-            }, 250)
-        })
+        $(window).on('resize', resizeWatcher)
     })
+
+    onBeforeUnmount(()=>{
+        $(window).off('resize', resizeWatcher)
+    })
+
+
 
     return viewport
 }

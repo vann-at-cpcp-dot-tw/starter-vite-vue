@@ -4,8 +4,6 @@ import useViewport from '@src/use/useViewport'
 import { useStore } from 'vuex'
 import { router, useRoute } from '@src/routes'
 import { isEmpty } from '@src/helpers'
-import components from '@src/components'
-const { Icon } = components
 
 export default defineComponent({
   props: {
