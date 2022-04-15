@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 const extendColors = [
   'main',
   'secondary',
@@ -61,9 +63,18 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
+    plugin(function({ addVariant, e }) {
+        addVariant('lang-zh-TW', ({modifySelectors, separator})=>{
+            modifySelectors(({className})=>`body.lang-zh-TW .${e(`lang-zh-TW${separator}${className}`)}`)
+        })
+
+        addVariant('lang-other', ({modifySelectors, separator})=>{
+            modifySelectors(({className})=>`body.lang-other .${e(`lang-other${separator}${className}`)}`)
+        })
+    }),
   ],
   corePlugins: {
-    container: false,
-    animation: false,
+      container: false,
+      animation: false,
   },
 }
