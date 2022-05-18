@@ -19,10 +19,13 @@ export default defineComponent({
     watch(()=>store.state.lightbox, ()=>{
       if( store.state.lightbox ){
         $('body').addClass('lb-open')
+      }else{
+        $('body').removeClass('lb-open')
       }
     }, {
       immediate: true,
     })
+
 
 
     return ()=>{
