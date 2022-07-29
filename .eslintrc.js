@@ -79,7 +79,7 @@ module.exports = defineConfig({
                 consistent: true
             }
         ],
-        'array-bracket-newline': ['error', { multiline: true }],
+        'array-bracket-newline': ['error', 'consistent'],
 
         // 'array-bracket-spacing': ['error', 'always'],
         // 'object-curly-spacing': ['error', 'always'],
