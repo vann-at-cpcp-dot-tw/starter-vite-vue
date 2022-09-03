@@ -51,7 +51,7 @@ export default defineComponent({
     }}>
       <path class={`${props.classes.path}`}
       fill={state.fill}
-      fill-rule="evenodd" d="M9 15.586L19.293 5.293a1 1 0 0 1 1.414 1.414l-11 11a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.414-1.414L9 15.586z"/>
+      fill-rule="evenodd" d="M9 15.586L19.293 5.293a1 1 0 0 1 1.414 1.414l-11 11a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.414-1.414L9 15.586z" />
     </svg>
   }
 })

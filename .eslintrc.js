@@ -6,10 +6,13 @@ module.exports = defineConfig({
   root: true,
   env: {
     browser: true,
+    amd: true,
+    node: true,
     es2021: true,
   },
   extends: [
     // 'standard',
+    'eslint:recommended',
     'plugin:vue/vue3-recommended',
     // 'plugin:tailwindcss/recommended', // TODO: 在 vue 裡面寫 jsx 會導致 eslint 一直噴錯，等 plugin 更新再打開
   ],
@@ -107,6 +110,7 @@ module.exports = defineConfig({
     ],
 
     // from eslint-plugin-vue
+    'vue/valid-attribute-name': ['off'],
     'vue/max-attributes-per-line': ['off'],
     'vue/prop-name-casing': ['off'],
     'vue/order-in-components': ['off'],
