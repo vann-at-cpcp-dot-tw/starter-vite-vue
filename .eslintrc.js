@@ -11,7 +11,6 @@ module.exports = defineConfig({
     es2021: true,
   },
   extends: [
-    // 'standard',
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
     // 'plugin:tailwindcss/recommended', // TODO: 在 vue 裡面寫 jsx 會導致 eslint 一直噴錯，等 plugin 更新再打開
