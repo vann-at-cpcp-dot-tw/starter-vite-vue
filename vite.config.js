@@ -31,7 +31,7 @@ import legacy from '@vitejs/plugin-legacy'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
-export default defineConfig(({mode}) => {
+export default defineConfig(({mode})=>{
 
   const ENV = loadEnv(mode, process.cwd(), '')
 
@@ -44,7 +44,7 @@ export default defineConfig(({mode}) => {
       vue(),
       vueJsx({
         enableObjectSlots: true,
-          // options are passed on to @vue/babel-plugin-jsx
+        // options are passed on to @vue/babel-plugin-jsx
       }),
       // legacy({
       //   targets: ['defaults', 'not IE 11']
@@ -55,31 +55,32 @@ export default defineConfig(({mode}) => {
       // })
     ],
     css: {
-        preprocessorOptions: {
-          sass: {
-            // additionalData: `$PUBLIC_URL: "${PUBLIC_URL}" \n`
-          }
-        },
+      preprocessorOptions: {
+        sass: {
+          // additionalData: `$PUBLIC_URL: "${PUBLIC_URL}" \n`
+        }
+      },
       //  requireModuleExtension: true
     },
     optimizeDeps: {
-        exclude: ['jquery']
+      exclude: ['jquery']
     },
     build: {
       emptyOutDir: true,
       target: 'es2015',
+      manifest: true,
       rollupOptions: {
         output: {
-          assetFileNames: "assets/[name]-[hash].[ext]",
-          chunkFileNames: "chunks/[name]-[hash].js",
-          entryFileNames: "entrances/[name]-[hash].js"
+          assetFileNames: 'assets/[name]-[hash].[ext]',
+          chunkFileNames: 'chunks/[name]-[hash].js',
+          entryFileNames: 'entrances/[name]-[hash].js'
         }
       }
     },
     resolve: {
       alias: {
-          // vue: 'vue/dist/vue.esm-bundler.js',
-          '@src': path.resolve(__dirname, './src'),
+        // vue: 'vue/dist/vue.esm-bundler.js',
+        '@src': path.resolve(__dirname, './src'),
       }
     }
   }
