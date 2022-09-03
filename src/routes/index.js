@@ -10,7 +10,7 @@ export const routes = [
   {
     name: 'home',
     path: '/',
-    component: ()=> import('@src/pages/home/Index.vue'),
+    component: ()=>import('@src/pages/home/Index.vue'),
   },
 ]
 

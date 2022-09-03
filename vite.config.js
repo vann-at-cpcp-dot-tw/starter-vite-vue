@@ -38,7 +38,7 @@ export default defineConfig(({mode}) => {
   return {
     define: {
       // 字串要包 ""，參考：https://cn.vitejs.dev/config/#define
-      // VITE_APP_URL: `"${ENV.APP_URL}"`,
+      VITE_APP_URL: `"${ENV.APP_URL}"`,
     },
     plugins: [
       vue(),

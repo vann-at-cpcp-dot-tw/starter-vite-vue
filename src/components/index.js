@@ -1,7 +1,7 @@
 import { defineAsyncComponent } from "vue"
 
 // 以 file system 自動引入
-const componentModules = import.meta.glob('./**/*.vue')
+const componentModules = import.meta.glob('./**/*.{vue,jsx}')
 const components = {}
 
 
