@@ -36,9 +36,11 @@ export default defineConfig(({mode})=>{
   const ENV = loadEnv(mode, process.cwd(), '')
 
   return {
+    base: ENV.APP_BASE || '/',
     define: {
       // 字串要包 ""，參考：https://cn.vitejs.dev/config/#define
-      VITE_APP_URL: `"${ENV.APP_URL}"`,
+      VITE_API_BASE: `"${ENV.API_BASE || '/'}"`,
+      VITE_APP_BASE: `"${ENV.APP_BASE || '/'}"`
     },
     plugins: [
       vue(),
@@ -57,7 +59,7 @@ export default defineConfig(({mode})=>{
     css: {
       preprocessorOptions: {
         sass: {
-          // additionalData: `$PUBLIC_URL: "${PUBLIC_URL}" \n`
+          additionalData: `$VITE_APP_BASE: "${ENV.APP_BASE || '/'}" \n`
         }
       },
       //  requireModuleExtension: true
