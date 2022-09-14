@@ -5,7 +5,7 @@ import { useStore } from 'vuex'
 import { useStoreState, useStoreGetters } from '@src/use/useStoreMappers'
 import { useQuery } from 'vue-query'
 import { router, useRoute } from '@src/routes'
-import { t, isEmpty, windowAssign, publicUrl } from '@src/helpers'
+import { isEmpty } from '@src/helpers'
 
 export default defineComponent({
   props: {},
