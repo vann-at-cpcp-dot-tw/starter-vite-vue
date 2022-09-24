@@ -27,7 +27,7 @@ module.exports = {
   content: {
     content: [
       // './src/**/*.{vue,jsx}',
-      '**/*.{html,js,jsx,vue,php}',
+      '**/*.{html,jsx,vue,php}',
     ],
   },
   future: { },

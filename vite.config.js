@@ -72,6 +72,9 @@ export default defineConfig(({mode})=>{
       target: 'es2015',
       manifest: true,
       rollupOptions: {
+        input: {
+          main: path.resolve(__dirname, './src/main.js'),
+        },
         output: {
           assetFileNames: 'assets/[name]-[hash].[ext]',
           chunkFileNames: 'chunks/[name]-[hash].js',
@@ -81,7 +84,7 @@ export default defineConfig(({mode})=>{
     },
     resolve: {
       alias: {
-        // vue: 'vue/dist/vue.esm-bundler.js',
+        // vue: 'vue/dist/vue.esm-bundler.js', // open if use .html template
         '@src': path.resolve(__dirname, './src'),
       }
     }
