@@ -13,6 +13,6 @@ require_once('./helpers.php');
     <?= vite('src/main.js'); ?>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app" v-cloak></div>
   </body>
 </html>
