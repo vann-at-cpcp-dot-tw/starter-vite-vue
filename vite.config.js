@@ -40,7 +40,8 @@ export default defineConfig(({mode})=>{
     define: {
       // 字串要包 ""，參考：https://cn.vitejs.dev/config/#define
       VITE_API_BASE: `"${ENV.API_BASE || ''}"`,
-      VITE_APP_BASE: `"${ENV.APP_BASE || ''}"`
+      VITE_APP_BASE: `"${ENV.APP_BASE || ''}"`,
+      VITE_ASSETS_BASE: `"${ENV.ASSETS_BASE || ENV.APP_BASE || ''}"`,
     },
     plugins: [
       vue(),
@@ -55,7 +56,7 @@ export default defineConfig(({mode})=>{
     css: {
       preprocessorOptions: {
         sass: {
-          additionalData: `$VITE_APP_BASE: "${ENV.APP_BASE || ''}" \n`
+          additionalData: `$VITE_ASSETS_BASE: "${ENV.ASSETS_BASE || ''}" \n`
         }
       },
       //  requireModuleExtension: true
