@@ -36,11 +36,11 @@ export default defineConfig(({mode})=>{
   const ENV = loadEnv(mode, process.cwd(), '')
 
   return {
-    base: ENV.APP_BASE || '/',
+    base: ENV.APP_BASE || '',
     define: {
       // 字串要包 ""，參考：https://cn.vitejs.dev/config/#define
-      VITE_API_BASE: `"${ENV.API_BASE || '/'}"`,
-      VITE_APP_BASE: `"${ENV.APP_BASE || '/'}"`
+      VITE_API_BASE: `"${ENV.API_BASE || ''}"`,
+      VITE_APP_BASE: `"${ENV.APP_BASE || ''}"`
     },
     plugins: [
       vue(),
@@ -48,18 +48,14 @@ export default defineConfig(({mode})=>{
         enableObjectSlots: true,
         // options are passed on to @vue/babel-plugin-jsx
       }),
-      // legacy({
-      //   targets: ['defaults', 'not IE 11']
-
-      //   // 如果要支援 ie11
-      //   // targets: ['ie >= 11'],
-      //   // additionalLegacyPolyfills: ['regenerator-runtime/runtime']
-      // })
+      legacy({
+        targets: ['defaults', 'not IE 11']
+      })
     ],
     css: {
       preprocessorOptions: {
         sass: {
-          additionalData: `$VITE_APP_BASE: "${ENV.APP_BASE || '/'}" \n`
+          additionalData: `$VITE_APP_BASE: "${ENV.APP_BASE || ''}" \n`
         }
       },
       //  requireModuleExtension: true
@@ -72,9 +68,9 @@ export default defineConfig(({mode})=>{
       target: 'es2015',
       manifest: true,
       rollupOptions: {
-        input: {
-          main: path.resolve(__dirname, './src/main.js'),
-        },
+        // input: {
+        //   main: path.resolve(__dirname, './src/main.js'),
+        // },
         output: {
           assetFileNames: 'assets/[name]-[hash].[ext]',
           chunkFileNames: 'chunks/[name]-[hash].js',
