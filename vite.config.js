@@ -29,6 +29,7 @@ import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import legacy from '@vitejs/plugin-legacy'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vitejs.dev/config/
 export default defineConfig(({mode})=>{
@@ -51,7 +52,8 @@ export default defineConfig(({mode})=>{
       }),
       legacy({
         targets: ['defaults', 'not IE 11']
-      })
+      }),
+      visualizer()
     ],
     css: {
       preprocessorOptions: {
@@ -75,7 +77,7 @@ export default defineConfig(({mode})=>{
         output: {
           assetFileNames: 'assets/[name]-[hash].[ext]',
           chunkFileNames: 'chunks/[name]-[hash].js',
-          entryFileNames: 'entrances/[name]-[hash].js'
+          entryFileNames: 'entry/[name]-[hash].js'
         }
       }
     },
