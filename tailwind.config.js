@@ -54,6 +54,27 @@ module.exports = {
       xxl: '1400px',
       xxxl: '1600px',
       xxxxl: '1920px',
+      _sm: {
+        max: '575px',
+      },
+      _md: {
+        max: '767px',
+      },
+      _lg: {
+        max: '991px',
+      },
+      _xl: {
+        max: '1199px',
+      },
+      _xxl: {
+        max: '1399px',
+      },
+      _xxxl: {
+        max: '1599px',
+      },
+      _xxxxl: {
+        max: '1919px',
+      },
     },
     extend: {
       colors: extendColors,
