@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^9.1.1",
+    "animejs": "^3.2.1",
     "axios": "^0.27.2",
     "imagesloaded": "^5.0.0",
     "jquery": "^3.6.1",
