@@ -7,6 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@barba/core": "^2.9.7",
     "@vueuse/core": "^9.1.1",
     "animejs": "^3.2.1",
     "axios": "^0.27.2",
