@@ -9,7 +9,15 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 ## Vue 開啟 HTML template 模式的方法：
 + vite.config.js 設置
-1. resolve > alias 打開 vue: 'vue/dist/vue.esm-bundler.js',
+1. resolve > alias 打開 vue 選項
+```
+resolve: {
+  alias: {
+    vue: 'vue/dist/vue.esm-bundler.js',
+    // 下略 ...
+  }
+}
+```
 2. build > rollupOptions 打開 
 ```
 input: {
