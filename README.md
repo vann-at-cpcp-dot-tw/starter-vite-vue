@@ -9,16 +9,17 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 ## Vue 開啟 HTML template 模式的方法：
 + vite.config.js 設置
-  1. resolve > alias 打開 vue: 'vue/dist/vue.esm-bundler.js',
-  2. build > rollupOptions 打開 
-  ```
-  input: {
-    main: path.resolve(__dirname, './src/main.js'),
-  },
-  ```
-  
- + 將各頁面邏輯，作為「component」引入 main.js，並且取消原本的 createApp 如：
- ```
+1. resolve > alias 打開 vue: 'vue/dist/vue.esm-bundler.js',
+2. build > rollupOptions 打開 
+```
+input: {
+  main: path.resolve(__dirname, './src/main.js'),
+},
+```
+
+
++ 將各頁面邏輯，作為「component」引入 main.js，並且取消原本的 createApp 如：
+```
  // 上略 ...
  
  import App from './App.vue'
@@ -42,6 +43,7 @@ createApp({})
 // 下略 ...
 ```
 
+
 + 原本的各頁模板（目前轉變成純邏輯，模板用 HTML 的）不要 return template，而是 return 必要 data，如：
 ```
 // pages > game > index.jsx
@@ -63,6 +65,7 @@ export default defineComponent({
   }
 })
 ```
+
 
 + 修改 HTML 模板檔案：
 ```
