@@ -8,7 +8,9 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 
 ## Vue 開啟 HTML template 模式的方法：
-+ vite.config.js 設置
+HTML template 通常用在與「不是自己切版 & 對方提供靜態切版」的合作情境上，如非像這樣的特殊需要，還是建議採用前後端分離 + Vue router 的作法
+
++ ### vite.config.js 設置
 1. resolve > alias 打開 vue 選項
 ```
 resolve: {
@@ -26,7 +28,7 @@ input: {
 ```
 
 
-+ 將各頁面邏輯，作為「component」引入 main.js，並且取消原本的 createApp 如：
++ ### 將各頁面邏輯，作為「component」引入 main.js，並且取消原本的 createApp 如：
 ```
  // 上略 ...
  
@@ -52,7 +54,7 @@ createApp({})
 ```
 
 
-+ 原本的各頁模板（目前轉變成純邏輯，模板用 HTML 的）不要 return template，而是 return 必要 data，如：
++ ### 原本的各頁模板（目前轉變成純邏輯，模板用 HTML 的）不要 return template，而是 return 必要 data，如：
 ```
 // pages > game > index.jsx
 // 上略 ....
@@ -75,7 +77,7 @@ export default defineComponent({
 ```
 
 
-+ 修改 HTML 模板檔案：
++ ### 修改 HTML 模板檔案：
 ```
 <!DOCTYPE html>
 <html>
