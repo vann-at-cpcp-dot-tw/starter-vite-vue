@@ -19,14 +19,14 @@ export default defineComponent({
 
     return ()=>(<LayoutGeneral>
       <Lightbox id="helloLightbox">
-        <div className="p-6 bg-white">
+        <div className="bg-white p-6">
           <LightboxClose />
           <div><Icon type="Checked" /> Hello Lightbox</div>
         </div>
       </Lightbox>
-      <div className="p-5 min-h-full flex flex-col justify-center items-center">
+      <div className="flex min-h-full flex-col items-center justify-center p-5">
 
-        <div className="row justify-center mb-5">
+        <div className="row mb-5 justify-center">
           <div className="col-auto">
             <img src={srcAssets['/src/assets/img/logo.png']} />
           </div>

@@ -145,7 +145,7 @@ module.exports = defineConfig({
       2,
       {
         attribute: 0,
-        alignAttributesVertically: true,
+        alignAttributesVertically: false,
         // baseIndent: 1,
         // closeBracket: 1,
         // ignores: ['pre', 'textarea', 'span'],
