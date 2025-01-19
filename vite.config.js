@@ -40,6 +40,8 @@ export default defineConfig(({mode})=>{
   return {
     base: ENV.APP_BASE || '',
     define: {
+      __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'true',
+
       // 字串要包 ""，參考：https://cn.vitejs.dev/config/#define
       VITE_API_BASE: `"${ENV.API_BASE || ''}"`,
       VITE_APP_BASE: `"${ENV.APP_BASE || ''}"`,
