@@ -17,8 +17,11 @@ const $style = useCssModule()
 </script>
 
 <template>
-    <div></div>
+  <div></div>
 </template>
 
-<style lang="sass" module>
-</style>
+<!-- <style lang="sass" module>
+</style> -->
+
+<!-- <style lang="sass" scoped>
+</style> -->

@@ -10,11 +10,6 @@ module.exports = defineConfig({
     node: true,
     es2021: true,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:vue/vue3-recommended',
-    'plugin:tailwindcss/recommended',
-  ],
   globals: {
     defineProps: 'readonly',
     defineEmits: 'readonly',
@@ -22,14 +17,25 @@ module.exports = defineConfig({
     withDefaults: 'readonly',
     $: 'readonly',
     jQuery: 'readonly',
-  },
-  parserOptions: {
-    ecmaVersion: 12,
-    sourceType: 'module',
-    ecmaFeatures: { jsx: true },
+    _: 'readonly',
+    lodash: 'readonly',
   },
   // 引用的插件  下載的插件去掉eslint-plugin-前綴引入
-  plugins: ['vue', 'react', 'tailwindcss', 'import', 'node', 'promise'],
+  plugins: ['vue', 'react', 'tailwindcss', 'import', 'node', 'promise', '@typescript-eslint'],
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: require.resolve('@typescript-eslint/parser'),
+    extraFileExtensions: ['.vue'],
+    ecmaFeatures: {
+      jsx: true
+    },
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/vue3-recommended',
+    'plugin:tailwindcss/recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   settings: {
     tailwindcss: {
       removeDuplicates: true,
@@ -43,7 +49,13 @@ module.exports = defineConfig({
     'comma-dangle': ['error', 'only-multiline'],
     camelcase: ['warn'],
     'no-unused-vars': ['warn'],
+    'no-undef': ['warn'],
+    '@typescript-eslint/no-unused-vars': ['warn'],
+    '@typescript-eslint/no-explicit-any': ['warn'],
     'no-new': ['warn'],
+    // 'prefer-const': ['error', {
+    // ignoreReadBeforeAssign: true
+    // }],
     // 'no-useless-return': ['off'],
     'import/no-absolute-path:': 'off', // 不知為何無作用
     // 'import/no-unresolved': 'off',
@@ -107,8 +119,10 @@ module.exports = defineConfig({
         // CallExpression: { arguments: 1 },
       },
     ],
+    'operator-linebreak': ['warn', 'before'],
 
     // from eslint-plugin-vue
+    '@typescript-eslint/no-empty-object-type': ['warn'],
     'vue/valid-attribute-name': ['off'],
     'vue/max-attributes-per-line': ['off'],
     'vue/prop-name-casing': ['off'],
@@ -125,9 +139,10 @@ module.exports = defineConfig({
         },
       },
     ],
+    'vue/singleline-html-element-content-newline': ['off'],
     'vue/html-indent': [
       'warn',
-      4,
+      2,
       {
         attribute: 0,
         alignAttributesVertically: true,
@@ -142,7 +157,10 @@ module.exports = defineConfig({
         multiline: 'never'
       }
     ],
+    'vue/first-attribute-linebreak': ['off'],
     'vue/no-mutating-props': ['warn'],
+    'vue/attribute-hyphenation': ['off'],
+    'vue/multiline-html-element-content-newline': ['off'],
 
     // from eslint-plugin-react
     'react/jsx-uses-react': ['off'],

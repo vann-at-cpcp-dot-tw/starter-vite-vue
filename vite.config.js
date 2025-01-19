@@ -50,9 +50,6 @@ export default defineConfig(({mode})=>{
         enableObjectSlots: true,
         // options are passed on to @vue/babel-plugin-jsx
       }),
-      // legacy({
-      //   targets: ['defaults', 'not IE 11']
-      // }),
       visualizer()
     ],
     css: {

@@ -21,8 +21,5 @@ export default defineComponent({
 })
 </script>
 
-<style lang="sass" module>
-</style>
-
 <!-- <style lang="sass" module>
 </style> -->

@@ -24,12 +24,9 @@ const extendColors = [
 }, {})
 
 module.exports = {
-  content: {
-    content: [
-      // './src/**/*.{vue,jsx}',
-      '**/*.{html,jsx,vue,php}',
-    ],
-  },
+  content: [
+    './src/**/*.{js,jsx,ts,tsx,vue,php,html}',
+  ],
   future: { },
   theme: {
     container: {
@@ -84,7 +81,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/line-clamp'),
     plugin(function({ addVariant, e }){
       addVariant('lang-zh-TW', ({modifySelectors, separator})=>{
         modifySelectors(({className})=>`body.lang-zh-TW .${e(`lang-zh-TW${separator}${className}`)}`)
