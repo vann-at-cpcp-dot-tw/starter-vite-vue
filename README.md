@@ -7,8 +7,8 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 - [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
 
-## Vue 開啟 HTML template 模式的方法：
-HTML template 通常用在與「不是自己切版 & 對方提供靜態切版」的合作情境上，如非像這樣的特殊需要，還是建議採用前後端分離 + Vue router 的作法
+## Vue 開啟 HTML-template 模式的方法：
+HTML-template 通常用在與「不是自己切版 & 對方提供靜態切版」的合作情境上，如非像這樣的特殊需要，還是建議採用前後端分離 + Vue router 的作法
 
 + ### vite.config.js 設置
 1. resolve > alias 打開 vue 選項
@@ -54,26 +54,27 @@ createApp({})
 ```
 
 
-+ ### 原本的各頁模板（目前轉變成純邏輯，模板用 HTML 的）不要 return template，而是 return 必要 data，如：
++ ### 將原本的各頁模板，轉變成純邏輯，template 僅放 slot 並將要用到的參數拋出去給 HTML-tempalte 用：
 ```
-// pages > game > index.vue
-// 上略 ....
+// pages > game > Index.vue
+<script setup lang="ts">
+import { reactive, nextTick } from 'vue'
 import { useStore } from 'vuex'
-export default defineComponent({
-  props: {},
-  setup: (props, {slots})=>{
-    const viewport = useViewport()
-    const store = useStore()
-    const state = reactive({
-    })
+import { isEmpty } from '@src/helpers'
 
-    return ()=><>{slots.default({
-      store,
-      viewport,
-      state,
-    })}</>
-  }
-})
+interface IProps {}
+const props = defineProps<IProps>()
+const store = useStore()
+const state = reactive({})
+</script>
+
+<template>
+  <slot
+  :store="store"
+  :state="state"
+  :isEmpty="isEmpty"
+  :nextTick="nextTick"></slot>
+</template>
 ```
 
 
