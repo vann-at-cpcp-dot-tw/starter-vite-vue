@@ -97,7 +97,7 @@ export default defineComponent({
   <body>
     <div id="app" v-cloak>
       <game-app> <!-- 引入 main.js 的 page component -->
-        <template #default="{store, viewport, state}"> <!-- page component return 出來的參數 -->
+        <template #default="{store, viewport, state}"> <!-- page component 透過 slot 拋到 HTML template 的參數 -->
           ...
           ...
         </template>
