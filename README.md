@@ -33,7 +33,7 @@ input: {
  // 上略 ...
  
  import App from './App.vue'
- import GameApp from './pages/game/Index.jsx'
+ import GameApp from './pages/game/Index.vue'
  
  // createApp(App) // 取消 createApp
 createApp({})
@@ -56,7 +56,7 @@ createApp({})
 
 + ### 原本的各頁模板（目前轉變成純邏輯，模板用 HTML 的）不要 return template，而是 return 必要 data，如：
 ```
-// pages > game > index.jsx
+// pages > game > index.vue
 // 上略 ....
 import { useStore } from 'vuex'
 export default defineComponent({
