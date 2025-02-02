@@ -20,7 +20,7 @@ resolve: {
   }
 }
 ```
-2. build > rollupOptions 打開 
+2. build > rollupOptions 打開
 ```
 input: {
   main: path.resolve(__dirname, './src/main.js'),
@@ -31,10 +31,10 @@ input: {
 + ### 將各頁面邏輯，作為「component」引入 main.js，並且取消原本的 createApp 如：
 ```
  // 上略 ...
- 
+
  import App from './App.vue'
  import GameApp from './pages/game/Index.vue'
- 
+
  // createApp(App) // 取消 createApp
 createApp({})
 .mixin({
@@ -54,7 +54,7 @@ createApp({})
 ```
 
 
-+ ### 將原本的各頁模板，轉變成純邏輯，template 僅放 slot 並將要用到的參數拋出去給 HTML-tempalte 用：
++ ### 將原本的各頁模板，轉變成純邏輯，template 僅放 slot 並將要用到的參數拋出去給 HTML-template 用：
 ```
 // pages > game > Index.vue
 <script setup lang="ts">
@@ -88,13 +88,13 @@ const state = reactive({})
    <!-- dev mode -->
    <script type="module" src="http://localhost:5173/src/main.js"></script>
    <!-- dev mode -->
-   
+
    <!-- prod mode -->
    <!-- <script type="module" crossorigin src="./entry/main.js"></script> -->
    <!-- <link rel="stylesheet" href="./assets2/main.css"> -->
    <!-- prod mode -->
   </head>
-  
+
   <body>
     <div id="app" v-cloak>
       <game-app> <!-- 引入 main.js 的 page component -->
